@@ -8,7 +8,7 @@ This docker-compose file spins two different containers as follows :-
 2. Backend Container : This container is configured to run the Python SimpleHTTPServer serving the helloWorld page.This container accepts traffic from the Frontend container on http.
 
 ## Usage
-1. Download the docker-compose in a directory
+1. Download the "docker-compose" file in a directory
 2. Execute the Below command
 ```hcl
 docker-compose up
