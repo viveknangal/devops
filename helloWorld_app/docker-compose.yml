@@ -1,0 +1,27 @@
+version: '3'
+services:
+
+  frontend:
+
+    # Below Image is having the Nginx installed with Self Signed certs
+    image: viveknangal/nginx
+
+    # Below attribute is used since the Backend app has to be online first
+    depends_on:
+     - backend
+
+    command: "nginx -g 'daemon off;'"
+
+    ports:
+     - "8081:80"
+     - "8082:443"
+
+  backend:
+
+    # Below Image is Running the Python SimpleHttpserver for showing the Hello world Page"
+    image: viveknangal/base_image
+
+    command:  bash -c "cd /;echo 'served by container ='`hostname` >>index.html;python -m SimpleHTTPServer 8083"
+
+    ports:
+     - "8083:8083"

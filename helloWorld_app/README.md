@@ -1,0 +1,27 @@
+# Docker-Compose file for HelloWorld Application
+
+
+##  Functionality
+This docker-compose file spins two different containers as follows :-
+
+1. Frontend Container : This container is configured to run the Nginx process with Self Signed certifcates & it proxy all the requests to the second container.This container accepts both https & http requests
+2. Backend Container : This container is configured to run the Python SimpleHTTPServer serving the helloWorld page.This container accepts traffic from the Frontend container on http.
+
+## Usage
+1. Download the docker-compose in a directory
+2. Execute the Below command
+```hcl
+docker-compose up
+```
+3. Browse the below URL in the browser 
+```hcl
+https://localhost:8082
+```
+
+## Result
+Once the above URL is accessed the below content is displayed on the browser
+
+```hcl
+
+This is a Hello World APp served by container = <BACKEND_CONTAINER_ID>
+```
