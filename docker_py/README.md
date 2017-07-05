@@ -7,7 +7,11 @@ Docker registry(Docker Hub) for finding out whether the new versions are availab
 
 
 ## Usage
-Run the script as follows:-
+* Make sure we have the docker python package installed as below:
+```hcl
+pip install docker
+```
+* Run the script as follows:-
 
 ```hcl
 ./docker_containers.py
