@@ -6,7 +6,7 @@ WORKDIR /usr/local
 
 # Updating the Packages & installing Python
 RUN apt-get update \
-    && apt-get install python -y
+    && apt-get install python -y --no-install-recommends
 
 EXPOSE 8083
 
