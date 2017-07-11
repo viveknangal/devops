@@ -10,8 +10,6 @@ services:
     depends_on:
      - backend
 
-    command: "nginx -g 'daemon off;'"
-
     ports:
      - "8081:80"
      - "8082:443"
@@ -20,8 +18,6 @@ services:
 
     # Below Image is Running the Python SimpleHttpserver for showing the Hello world Page"
     image: viveknangal/base_image
-
-    command:  bash -c "cd /;echo 'served by container ='`hostname` >>index.html;python -m SimpleHTTPServer 8083"
 
     ports:
      - "8083:8083"
