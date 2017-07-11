@@ -1,6 +1,6 @@
 FROM nginx:1.12.0
 
-MAINTAINER viveknangal@hotmail.com
+MAINTAINER viveknangal@xyz.com
 
 WORKDIR /etc/nginx/conf.d/
 
