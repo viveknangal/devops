@@ -1,0 +1,17 @@
+FROM nginx:1.12.0
+
+MAINTAINER viveknangal@hotmail.com
+
+WORKDIR /etc/nginx/conf.d/
+
+# Updating the Packages & installing the Self Signed Certs
+RUN apt-get update \
+    && apt-get install openssl -y \
+    && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/nginx.key -out /etc/nginx/nginx.crt -subj "/C=IN/ST=Karnataka/L=Bangalore/O=STartup Network/OU=IT Department/CN=localhost"
+
+# Copying Nginx conf file having above cert entries
+COPY default.conf .
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
