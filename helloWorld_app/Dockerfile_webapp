@@ -1,0 +1,14 @@
+FROM ubuntu:16.04
+
+MAINTAINER viveknangal@xyz.com
+
+WORKDIR /usr/local
+
+# Updating the Packages & installing Python
+RUN apt-get update \
+    && apt-get install python -y
+
+EXPOSE 8083
+
+# Running the Python SimpleHTTPServer for serving the Hello World page
+CMD bash -c "echo 'served by container ='`hostname` >>index.html;python -m SimpleHTTPServer 8083"
