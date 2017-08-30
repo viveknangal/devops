@@ -2,16 +2,16 @@
 node("master")
 {
 
-# STAGE is a labeled block.
+// STAGE is a labeled block.
 stage 'CI Build'
 
- ##########################################################
- #SCM is a special variable which instructs the CHECKOUT step to clone the 
- #specific revision which triggered this Pipeline run checkout scm   
- ##########################################################
+ //##########################################################
+ // SCM is a special variable which instructs the CHECKOUT step to clone the 
+ // specific revision which triggered this Pipeline run checkout scm   
+ //##########################################################
  checkout scm
 
-# Below code will run the Build steps for a given application 
+ // Below code will run the Build steps for a given application 
  sh  '''
            echo " This is a CI build Step"
 	   ## Here specify the steps for running your CI build steps
@@ -26,10 +26,10 @@ stage 'CI Build'
  
      '''
 	
-# STAGE is a labeled block.
+// STAGE is a labeled block.
 stage 'Merge Build'	
      
-        # Below code will TAG the current state of code so that later it can be merged to Master branch
+        // Below code will TAG the current state of code so that later it can be merged to Master branch
 	sh  '''
             echo " This is a Merge Build Step"
             
@@ -46,7 +46,7 @@ stage 'Merge Build'
              git push origin ${BUILD_TAG};
          '''
       
-     # Below code will checkout the Master branach of a given Repository 
+     // Below code will checkout the Master branach of a given Repository 
       git credentialsId: 'c0a0b94a-b43e-421a-a97a-b8aeaf429a4d', url: 'git@github.com:viveknangal/devops'
       
       sh '''  
