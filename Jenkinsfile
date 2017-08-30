@@ -48,7 +48,7 @@ stage 'Merge Build'
          '''
       
      // Below code will checkout the Master branach of a given Repository 
-      git credentialsId: 'c0a0b94a-b43e-421a-a97a-b8aeaf429a4d', url: '${env.git_repo_name}'
+      git credentialsId: 'c0a0b94a-b43e-421a-a97a-b8aeaf429a4d', url: "${env.git_repo_name}"
       
       sh '''  
              
