@@ -25,7 +25,7 @@ sh  '''
 
             
       '''
-      git credentialsId: 'c0a0b94a-b43e-421a-a97a-b8aeaf429a4d', url: 'git@github:viveknangal/devops'
+      git credentialsId: 'c0a0b94a-b43e-421a-a97a-b8aeaf429a4d', url: 'git@github.com:viveknangal/devops'
  sh '''  
              cat .git/config
 	     git fetch --tags;
