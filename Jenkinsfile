@@ -14,11 +14,9 @@ stage 'CI Build'
  // Below code will run the Build steps for a given application 
  sh  '''
            echo " This is a CI build Step"
-	   ## Here specify the steps for running your CI build steps
-	   ## for instance refer below pseudo code for node.js Application
-	   
+
 	   ###### Specify your application specific Build Steps Below ######
-	   ###### pseudo code for node.js Application  #######
+	   ###### For instance refer below build steps for node.js Application  #######
 	   # npm install
 	   # npm run webpack
 	   ##########################
@@ -39,8 +37,8 @@ stage 'Merge Build'
             # Remove the HTTP origin 
             git remote rm origin;
          	
-            # Add the SSH origin
-            git remote add origin "git@github.com:viveknangal/devops.git";
+            # Add the SSH origin for your repository
+            git remote add origin "git@github.com:viveknangal/devops.git"; 
          			
              # Push the tag 
              git push origin ${BUILD_TAG};
