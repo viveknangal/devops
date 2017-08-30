@@ -10,7 +10,7 @@ sh  '''
             
              echo ' Running the Build steps  '
              checkout scm
-              # Adding Tag    
+              # Adding Tag    for pull
             git tag -a ${BUILD_TAG} -m 'CI commit tag';
          	
             # Remove the HTTP origin 
