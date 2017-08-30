@@ -41,7 +41,7 @@ stage 'Merge Build'
             git remote rm origin;
          	
             # Add the SSH origin for your repository
-            git remote add origin "${env.git_repo_name}"; 
+            git remote add origin "${git_repo_name}"; 
          			
              # Push the tag 
              git push origin ${BUILD_TAG};
