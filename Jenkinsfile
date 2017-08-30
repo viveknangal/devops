@@ -1,3 +1,6 @@
+///// Common variables //////
+env.git_repo_name="git@github.com:viveknangal/devops"
+
 
 node("master")
 {
@@ -38,14 +41,14 @@ stage 'Merge Build'
             git remote rm origin;
          	
             # Add the SSH origin for your repository
-            git remote add origin "git@github.com:viveknangal/devops.git"; 
+            git remote add origin "${env.git_repo_name}"; 
          			
              # Push the tag 
              git push origin ${BUILD_TAG};
          '''
       
      // Below code will checkout the Master branach of a given Repository 
-      git credentialsId: 'c0a0b94a-b43e-421a-a97a-b8aeaf429a4d', url: 'git@github.com:viveknangal/devops'
+      git credentialsId: 'c0a0b94a-b43e-421a-a97a-b8aeaf429a4d', url: '${env.git_repo_name}'
       
       sh '''  
              
