@@ -9,7 +9,7 @@ checkout scm
 
 sh  '''
 
-             echo ' Running the Build steps  '
+             echo ' Running the Build steps'
 
             
       '''
