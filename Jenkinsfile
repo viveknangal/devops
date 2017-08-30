@@ -7,9 +7,9 @@ stage 'Gated Build'
 
 
 sh  '''
-
+            
              echo ' Running the Build steps  '
-             
+             checkout scm
               # Adding Tag    
             git tag -a ${BUILD_TAG} -m 'CI commit tag';
          	
