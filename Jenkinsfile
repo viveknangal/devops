@@ -1,4 +1,4 @@
-///// Common variables //////
+///// Common variables /////
 env.git_repo_name="git@github.com:viveknangal/devops"
 
 
