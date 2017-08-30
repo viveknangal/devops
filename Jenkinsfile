@@ -21,13 +21,14 @@ sh  '''
          			
              # Push the tag 
              git push origin ${BUILD_TAG};
-             
+             cat .git/config
 
             
       '''
       git credentialsId: 'c0a0b94a-b43e-421a-a97a-b8aeaf429a4d', url: 'https://github.com/viveknangal/devops'
  sh '''  
-             git fetch --tags;
+             cat .git/config
+	     git fetch --tags;
              
 	     # Print all the Tags
 	     git tag;
