@@ -1,0 +1,36 @@
+version: 0.2
+
+env:
+ variables:
+    NODE_HOME: "/sbin/"
+
+phases:
+ install:
+   commands:
+      - apt-get update -y
+ pre_build:
+   commands:
+      - echo Nothing to do in pre_build
+      - curl -o packer.zip https://releases.hashicorp.com/packer/1.0.3/packer_1.0.3_linux_amd64.zip && unzip packer.zip
+      - echo "Validating Packer template"
+      - ./packer validate build.packer
+      - echo pre_build ends here
+      
+ build:
+   commands:
+      - echo build started
+      - touch abc.txt
+      - tar -cvf abc.tar abc.txt
+      - curl -qL 169.254.170.2/${AWS_CONTAINER_CREDENTIALS_RELATIVE_URI} > aws_credentials.json
+      - cat aws_credentials.json
+      - echo aws credentilas file
+      - ./packer build -color=false build.packer | tee build.log
+      
+      
+ post_build:
+   commands:
+      - echo Build COmpleted
+      
+artifacts:
+ files:
+   - abc.tar
