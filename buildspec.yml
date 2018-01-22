@@ -21,9 +21,6 @@ phases:
       - echo build started
       - touch abc.txt
       - tar -cvf abc.tar abc.txt
-      - curl -qL 169.254.170.2/${AWS_CONTAINER_CREDENTIALS_RELATIVE_URI} > aws_credentials.json
-      - cat aws_credentials.json
-      - echo aws credentilas file
       - ./packer build -color=false build.packer | tee build.log
       
       
