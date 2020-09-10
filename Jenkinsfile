@@ -1,6 +1,6 @@
 ///// Common variables /////
 env.git_repo_name="git@github.com:viveknangal/devops"
-env.git_id="c0a97a-b8aeaf429a4d"
+env.git_id="-b8aeaf429a4d"
 
 node("master")
 {
